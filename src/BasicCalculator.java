@@ -5,7 +5,7 @@ public class BasicCalculator {
     public static void main(String[] args) {
 
         // store the two numbers
-        double a = 0, b = 0;
+        double a, b;
 
         // create scanner for user input
         Scanner scanner = new Scanner(System.in);
@@ -27,24 +27,17 @@ public class BasicCalculator {
         System.out.println("Enter the operator (+,-,*,/)");
 
         char operator = scanner.next().charAt(0);
-        double result = 0;
+        double result;
 
         switch (operator) {
-            case '+':
-                result = a + b;
-                break;
-            case '-':
-                result = a - b;
-                break;
-            case '*':
-                result = a * b;
-                break;
-            case '/':
-                result = a / b;
-                break;
-            default:
+            case '+' -> result = a + b;
+            case '-' -> result = a - b;
+            case '*' -> result = a * b;
+            case '/' -> result = a / b;
+            default -> {
                 System.out.println("Invalid operator");
                 return;
+            }
         }
 
         System.out.println(a + " " + operator + " " + b + " = " + result);
